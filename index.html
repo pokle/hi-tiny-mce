@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,200&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 200;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.slim.min.js"></script>
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+</head>
+
+<body>
+    <h2>Entry</h2>
+    <form monsubmit="javascript:takeit(event)">
+        <textarea name="text" id="ta">Easy! You should check out MoxieManager!</textarea>
+        <input type="submit">
+    </form>
+
+    <h2>Preview</h2>
+    <div id="preview">
+        <h1>H1</h1>
+        <h2>H2</h2>
+        <h3>H3</h3>
+        <h4>H4</h4>
+        <p>Paragraph <b>Bold</b> <i>Italics</i></p>
+    </div>
+
+    <script>
+      function takeit(event) {
+          event.preventDefault();
+          let html = $('#ta').val();
+          console.log(html);
+          $('#preview').html(html);
+      }
+  </script>
+</body>
+
+</html>
